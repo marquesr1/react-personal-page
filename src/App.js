@@ -1,9 +1,10 @@
 import React from "react";
+//import { Container, Menu } from "semantic-ui-react";
 
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Details from "./Components/Details";
-import Portfolio from "./Components/Portfolio";
+import Works from "./Components/Works";
 import Blog from "./Components/Blog";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
@@ -14,7 +15,7 @@ function App() {
       <Header />
       <About />
       <Details />
-      <Portfolio />
+      <Works />
       <Blog />
       <Contact />
       <Footer />
