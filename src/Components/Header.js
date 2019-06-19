@@ -3,10 +3,16 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 
 export default class Header extends Component {
   render() {
+    let name;
+    if (this.props.name) {
+      name = this.props.name;
+    } else {
+      name = "Seu nome";
+    }
     return (
       <Navbar sticky="top" bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Rafael Marques</Navbar.Brand>
+          <Navbar.Brand href="#home">{name}</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
