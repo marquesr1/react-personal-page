@@ -5,10 +5,11 @@ import {
   Image,
   Icon,
   List,
-  Divider,
-  Segment
+  Segment,
+  Button
 } from "semantic-ui-react";
 import Avatar from "../Images/avatar.png";
+import Curriculum from "../Files/Curriculum.pdf";
 
 export default class Details extends Component {
   render() {
@@ -103,6 +104,16 @@ export default class Details extends Component {
               </h2>
               {profession}
               <h1> </h1>
+              <a
+                href={Curriculum}
+                style={{
+                  textDecoration: "none"
+                }}
+              >
+                <Button basic color="black" fluid>
+                  CURRÍCULO COMPLETO
+                </Button>
+              </a>
             </Grid.Column>
             <Grid.Column>
               <h2>
@@ -115,6 +126,7 @@ export default class Details extends Component {
                 Formação
               </h2>
               <List bulleted>{backgroud}</List>
+              <h1> </h1>
               <h2>
                 <Icon
                   name="comment alternate outline"
@@ -125,11 +137,13 @@ export default class Details extends Component {
                 Idiomas
               </h2>
               <List bulleted>{languages}</List>
+              <h1> </h1>
               <h2>
                 <Icon name="heart" circular inverted size="small" />
                 Interesses
               </h2>
               <List bulleted>{interests}</List>
+              <h1> </h1>
               <h2>
                 <Icon name="coffee" circular inverted size="small" />
                 Atividades desenvolvidas

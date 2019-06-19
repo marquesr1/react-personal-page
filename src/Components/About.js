@@ -4,42 +4,21 @@ import Background from "../Images/header-background.jpg";
 
 export default class About extends Component {
   render() {
-    let name;
-    if (this.props.name) {
-      name = this.props.name;
-    } else {
-      name = "'seu nome'";
+    let name = "[nome]";
+    let occupation = "[ocupacao]";
+    let birthPlace = "[local de nascimento]";
+    let city = "[local atual]";
+    let github = "https://github.com/";
+    let linkedin = "https://linkedin.com/";
+    if (this.props.data) {
+      name = this.props.data.name;
+      occupation = this.props.data.occupation;
+      birthPlace = this.props.data.birthPlace;
+      city = this.props.data.city;
+      github = this.props.data.github;
+      linkedin = this.props.data.linkedin;
     }
-    let occupation;
-    if (this.props.occupation) {
-      occupation = this.props.occupation;
-    } else {
-      occupation = "'sua ocupação'";
-    }
-    let birthPlace;
-    if (this.props.occupation) {
-      birthPlace = this.props.birthPlace;
-    } else {
-      birthPlace = "'sua cidade natal'";
-    }
-    let city;
-    if (this.props.city) {
-      city = this.props.city;
-    } else {
-      city = "'sua cidade atual'";
-    }
-    let github;
-    if (this.props.github) {
-      github = this.props.github;
-    } else {
-      github = "https://github.com";
-    }
-    let linkedin;
-    if (this.props.github) {
-      linkedin = this.props.linkedin;
-    } else {
-      linkedin = "https://linkedin.com/";
-    }
+
     return (
       <Grid
         id="home"

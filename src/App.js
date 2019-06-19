@@ -11,6 +11,14 @@ import Footer from "./Components/Footer";
 
 export default class App extends Component {
   state = {
+    about: {
+      name: "Rafael Marques",
+      occupation: "estudante de Engenharia de Software",
+      birthPlace: "Cornélio Procópio - PR",
+      city: "Cornélio",
+      github: "https://github.com/marquesr1/",
+      linkedin: "https://linkedin.com/"
+    },
     details: {
       name: "Rafael Fernandes Marques",
       bio:
@@ -31,7 +39,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
-        <About />
+        <About data={this.state.about} />
         <Details data={this.state.details} />
         <Works />
         <Blog />
