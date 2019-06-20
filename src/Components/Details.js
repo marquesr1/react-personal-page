@@ -118,12 +118,7 @@ export default class Details extends Component {
               </Grid.Column>
               <Grid.Column style={margin}>
                 <h2>
-                  <Icon
-                    name="address card outline"
-                    circular
-                    inverted
-                    size="small"
-                  />
+                  <Icon name="graduation cap" circular inverted size="small" />
                   Formação
                 </h2>
                 <List bulleted>{backgroud}</List>

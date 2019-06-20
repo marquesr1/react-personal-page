@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import { Container, Menu } from "semantic-ui-react";
 
 import Header from "./Components/Header";
 import About from "./Components/About";
@@ -51,6 +50,20 @@ export default class App extends Component {
       "Windows",
       "Linux"
     ],
+    works: [
+      {
+        header: "Página Pessoal",
+        description:
+          "Página pessoal desenvolvida utilizando React para apresentação na disciplina Programação Web 1",
+        link: "https://github.com/marquesr1/react-personal-page"
+      },
+      {
+        header: "Desafio 4Devs",
+        description:
+          "Implementação do Desafio 4Devs da ForLogic utilizando React ",
+        link: "https://github.com/marquesr1/desafio-4-devs"
+      }
+    ],
     footer: {
       name: "Rafael Fernandes Marques",
       email: "rafael.fmarques@outlook.com"
@@ -64,7 +77,7 @@ export default class App extends Component {
         <About data={this.state.about} />
         <Details data={this.state.details} />
         <Skills data={this.state.skills} />
-        <Works />
+        <Works data={this.state.works} />
         <Blog />
         <Contact />
         <Footer data={this.state.footer} />
