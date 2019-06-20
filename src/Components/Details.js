@@ -53,26 +53,26 @@ export default class Details extends Component {
         );
       });
     } else {
-      name = "nome";
-      bio = "biografia";
+      name = "[nome]";
+      bio = "[biografia]";
       backgroud = (
         <List.Item>
-          <h5>formação</h5>
+          <h5>[formação]</h5>
         </List.Item>
       );
       languages = (
         <List.Item>
-          <h5>idioma</h5>
+          <h5>[idioma]</h5>
         </List.Item>
       );
       interests = (
         <List.Item>
-          <h5>Interesse</h5>
+          <h5>[interesse]</h5>
         </List.Item>
       );
       works = (
         <List.Item>
-          <h5>atividade</h5>
+          <h5>[atividade]</h5>
         </List.Item>
       );
     }
@@ -88,34 +88,35 @@ export default class Details extends Component {
               doubling
               stackable
             >
-              <Grid.Column textAlign="left">
-                <h1> </h1>
+              <Grid.Column textAlign="left" style={margin}>
                 <Image src={Avatar} size="small" circular bordered centered />
-                <h1> </h1>
-                <h2>
+                <h2 style={padding}>
                   <Icon name="user" circular inverted size="small" />
                   {name}
                 </h2>
                 {bio}
-                <h1> </h1>
-                <h2>
+                <h2 style={padding}>
                   <Icon name="briefcase" circular inverted size="small" />
                   Contato com a profissão
                 </h2>
                 {profession}
-                <h1> </h1>
                 <a
                   href={Curriculum}
                   style={{
                     textDecoration: "none"
                   }}
                 >
-                  <Button basic color="black" fluid>
-                    CURRÍCULO COMPLETO
+                  <Button
+                    basic
+                    color="black"
+                    fluid
+                    style={{ marginTop: "2rem" }}
+                  >
+                    BAIXAR CURRÍCULO
                   </Button>
                 </a>
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column style={margin}>
                 <h2>
                   <Icon
                     name="address card outline"
@@ -126,8 +127,7 @@ export default class Details extends Component {
                   Formação
                 </h2>
                 <List bulleted>{backgroud}</List>
-                <h1> </h1>
-                <h2>
+                <h2 style={padding}>
                   <Icon
                     name="comment alternate outline"
                     circular
@@ -137,14 +137,12 @@ export default class Details extends Component {
                   Idiomas
                 </h2>
                 <List bulleted>{languages}</List>
-                <h1> </h1>
-                <h2>
+                <h2 style={padding}>
                   <Icon name="heart" circular inverted size="small" />
                   Interesses
                 </h2>
                 <List bulleted>{interests}</List>
-                <h1> </h1>
-                <h2>
+                <h2 style={padding}>
                   <Icon name="coffee" circular inverted size="small" />
                   Atividades desenvolvidas
                 </h2>
@@ -157,3 +155,12 @@ export default class Details extends Component {
     );
   }
 }
+
+const padding = {
+  paddingTop: "2rem"
+};
+
+const margin = {
+  marginTop: "2rem",
+  marginBottom: "2rem"
+};

@@ -28,11 +28,11 @@ export default class About extends Component {
       >
         <Grid.Column style={{ maxWidth: 600 }}>
           <Container>
-            <h2 style={{ color: "LightGrey" }}>
+            <h2 style={{ color: "LightGrey", paddingBottom: "3rem" }}>
               Olá! sou <b>{name}</b>, <b>{occupation}</b>. Sou de {birthPlace},
               e atualmente moro em {city}.
             </h2>
-            <h1> </h1>
+
             <a
               href={github}
               style={{
