@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/react-personal-page/static/js/main.a9515318.chunk.js",
+    "main.js.map": "/react-personal-page/static/js/main.a9515318.chunk.js.map",
+    "runtime~main.js": "/react-personal-page/static/js/runtime~main.b6326a13.js",
+    "runtime~main.js.map": "/react-personal-page/static/js/runtime~main.b6326a13.js.map",
+    "static/js/2.27826fe3.chunk.js": "/react-personal-page/static/js/2.27826fe3.chunk.js",
+    "static/js/2.27826fe3.chunk.js.map": "/react-personal-page/static/js/2.27826fe3.chunk.js.map",
+    "index.html": "/react-personal-page/index.html",
+    "precache-manifest.a17f78dbc3ae54149e17ba80605f071b.js": "/react-personal-page/precache-manifest.a17f78dbc3ae54149e17ba80605f071b.js",
+    "service-worker.js": "/react-personal-page/service-worker.js",
+    "static/media/Curriculum.pdf": "/react-personal-page/static/media/Curriculum.8cc3327c.pdf",
+    "static/media/avatar.png": "/react-personal-page/static/media/avatar.3f6bce00.png",
+    "static/media/header-background.jpg": "/react-personal-page/static/media/header-background.efdba046.jpg"
+  }
+}
