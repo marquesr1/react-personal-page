@@ -17,7 +17,7 @@ export default class Skills extends Component {
       <div id="skills">
         <Segment basic inverted padded="very" textAlign="center" size="massive">
           <h1 style={txtStyle}>Skills</h1>
-          <h4 style={txtStyle}>Algumas de minhas habilidades profissionais.</h4>
+          <h4 style={txtStyle}>Algumas de minhas habilidades profissionais</h4>
           <Container text>{skills}</Container>
         </Segment>
       </div>
