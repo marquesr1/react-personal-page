@@ -10,7 +10,11 @@ export default class Blog extends Component {
           image={item.image}
           header={item.header}
           description={item.description}
-          extra={<b>VER</b>}
+          extra={
+            <a href={item.ref} style={{ textDecoration: "none" }}>
+              <b>Ver mais</b>
+            </a>
+          }
         />
       );
     });

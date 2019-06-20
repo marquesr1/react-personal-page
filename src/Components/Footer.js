@@ -9,9 +9,11 @@ export default class Footer extends Component {
       name = this.props.data.name;
       email = this.props.data.email;
     }
+    const year = new Date();
     return (
       <div>
-        <Segment basic inverted padded="very" textAlign="center" size="small">
+        <Segment basic inverted padded textAlign="center" size="small">
+          <p>{year.getFullYear()}</p>
           <h5>{name}</h5>
           <p>{email}</p>
         </Segment>

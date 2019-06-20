@@ -17,14 +17,14 @@ export default class App extends Component {
       birthPlace: "Cornélio Procópio - PR",
       city: "Cornélio",
       github: "https://github.com/marquesr1/",
-      linkedin: "https://linkedin.com/"
+      linkedin: "https://www.linkedin.com/in/rafael-marques-375b80181/"
     },
     details: {
       name: "Rafael Fernandes Marques",
       bio:
-        "Aute in ad ullamco incididunt do esse dolor ut ut do fugiat. Dolore commodo eu laboris deserunt labore reprehenderit eiusmod eu id minim officia proident. Eiusmod minim nisi duis voluptate amet irure et voluptate anim. Elit Lorem non non aute mollit proident ad. In et id laborum excepteur est dolore magna laborum proident fugiat velit fugiat reprehenderit. Ad anim ad ut ex.",
+        "Em 2013 iniciei o ensino médio na UTFPR, e em 2016 me formei como técnico em mecânica. Em 2017 ingressei no curso de engenharia de software, também na UTFPR, e espero me formar em 2020.",
       profession:
-        "Dolor amet veniam dolore adipisicing consectetur consectetur nulla culpa ut cupidatat Lorem commodo proident. Ad eiusmod proident reprehenderit laborum exercitation. Pariatur sint quis id cupidatat pariatur tempor dolor irure. Excepteur in id quis duis sit eiusmod quis irure irure quis commodo tempor ut.",
+        "O desenvolvimento de software é um campo dinâmico, e as necessidades de trabalho estão mudando constantemente. Por isso, gosto de ficar de olho nas tendências e tecnologias futuras, especialmente na área de IA e aprendizado de máquina.",
       backgroud: [
         "UTFPR/6º período - Bacharelado em Engenharia de Software",
         "UTFPR/2016 - Técnico em Produção Mecânica, com nível médio integrado"
@@ -67,22 +67,6 @@ export default class App extends Component {
     blog: [
       {
         image:
-          "https://i0.wp.com/cloud.estacaonerd.com/wp-content/uploads/2019/03/20194706/Stadia_03_19_19.0.jpg",
-        header: "Google Stadia, a “Netflix de jogos”",
-        description:
-          "A Google revelou o preço e outras informações de seu futuro serviço de streaming de jogos",
-        p1:
-          "O Google Stadia será o serviço de transmissão online de jogos do Google. Anunciado em março, ele funcionará no próprio navegador da companhia, o Chrome. ",
-        p2:
-          "Não será necessário ter um console específico, tudo funcionará no computador. O usuário poderá interagir com os outros jogadores, assistir clipes de jogos e também jogar. ",
-        p3:
-          "Ainda não há previsão para quando o Google Stadia chegará ao Brasil.",
-        ref:
-          "https://exame.abril.com.br/tecnologia/netflix-de-jogos-google-stadia-chega-em-novembro-com-preco-alto/",
-        date: ""
-      },
-      {
-        image:
           "https://d2skuhm0vrry40.cloudfront.net/2019/articles/2019-05-27-05-26/amd-ryzen-3rd-gen-navi-announced-1558931160294.jpg/EG11/thumbnail/766x430/format/jpg/quality/75/cover.jpg",
         header: "AMD revela CPUs e GPUs de nova geração ",
         description:
@@ -112,13 +96,38 @@ export default class App extends Component {
         ref:
           "https://www.theenemy.com.br/e3-2019/vimos-a-demo-cyberpunk-2077-inaugura-uma-nova-geracao-de-videogame",
         date: ""
+      },
+      {
+        image:
+          "https://i0.wp.com/cloud.estacaonerd.com/wp-content/uploads/2019/03/20194706/Stadia_03_19_19.0.jpg",
+        header: "Google Stadia, a “Netflix de jogos”",
+        description:
+          "A Google revelou o preço e outras informações de seu futuro serviço de streaming de jogos",
+        p1:
+          "O Google Stadia será o serviço de transmissão online de jogos do Google. Anunciado em março, ele funcionará no próprio navegador da companhia, o Chrome. ",
+        p2:
+          "Não será necessário ter um console específico, tudo funcionará no computador. O usuário poderá interagir com os outros jogadores, assistir clipes de jogos e também jogar. ",
+        p3:
+          "Ainda não há previsão para quando o Google Stadia chegará ao Brasil.",
+        ref:
+          "https://exame.abril.com.br/tecnologia/netflix-de-jogos-google-stadia-chega-em-novembro-com-preco-alto/",
+        date: ""
       }
     ],
+    contact: {
+      facebook:
+        "https://www.facebook.com/people/Rafael-Fernandes/100002207072236",
+      linkedin: "https://www.linkedin.com/in/rafael-marques-375b80181/"
+    },
     footer: {
       name: "Rafael Fernandes Marques",
       email: "rafael.fmarques@outlook.com"
     }
   };
+
+  componentDidMount() {
+    document.title = this.state.about.name;
+  }
 
   render() {
     return (
@@ -129,7 +138,7 @@ export default class App extends Component {
         <Skills data={this.state.skills} />
         <Works data={this.state.works} />
         <Blog data={this.state.blog} />
-        <Contact />
+        <Contact data={this.state.contact} />
         <Footer data={this.state.footer} />
       </div>
     );

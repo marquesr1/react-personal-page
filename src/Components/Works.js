@@ -10,8 +10,8 @@ export default class Works extends Component {
           header={item.header}
           description={item.description}
           extra={
-            <a href={item.link}>
-              <b>VER</b>
+            <a href={item.link} style={{ textDecoration: "none" }}>
+              <b>Ver repositório</b>
             </a>
           }
         />
