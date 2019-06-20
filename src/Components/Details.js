@@ -8,8 +8,8 @@ import {
   Segment,
   Button
 } from "semantic-ui-react";
-import Avatar from "../Images/avatar.png";
-import Curriculum from "../Files/Curriculum.pdf";
+import Avatar from "../Components/Assets/Images/avatar.png";
+import Curriculum from "../Components/Assets/Files/Curriculum.pdf";
 
 export default class Details extends Component {
   render() {
@@ -78,7 +78,7 @@ export default class Details extends Component {
     }
     return (
       <div id="details">
-        <Segment padded size="big">
+        <Segment basic padded size="big">
           <Container>
             <Grid
               columns={2}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Grid, Icon } from "semantic-ui-react";
-import Background from "../Images/header-background.jpg";
+import Background from "../Components/Assets/Images/header-background.jpg";
 
 export default class About extends Component {
   render() {

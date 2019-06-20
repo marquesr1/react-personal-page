@@ -50,7 +50,11 @@ export default class App extends Component {
       "Git",
       "Windows",
       "Linux"
-    ]
+    ],
+    footer: {
+      name: "Rafael Fernandes Marques",
+      email: "rafael.fmarques@outlook.com"
+    }
   };
 
   render() {
@@ -63,7 +67,7 @@ export default class App extends Component {
         <Works />
         <Blog />
         <Contact />
-        <Footer />
+        <Footer data={this.state.footer} />
       </div>
     );
   }
