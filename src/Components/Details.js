@@ -77,86 +77,83 @@ export default class Details extends Component {
       );
     }
     return (
-      <Segment>
-        <Container>
-          <Grid
-            columns={2}
-            relaxed="very"
-            id="details"
-            style={gridStyle}
-            textAlign="left"
-            verticalAlign="middle"
-            doubling
-          >
-            <Grid.Column textAlign="left">
-              <h1> </h1>
-              <Image src={Avatar} size="small" circular bordered centered />
-              <h1> </h1>
-              <h2>
-                <Icon name="user" circular inverted size="small" />
-                {name}
-              </h2>
-              {bio}
-              <h1> </h1>
-              <h2>
-                <Icon name="briefcase" circular inverted size="small" />
-                Contato com a profissão
-              </h2>
-              {profession}
-              <h1> </h1>
-              <a
-                href={Curriculum}
-                style={{
-                  textDecoration: "none"
-                }}
-              >
-                <Button basic color="black" fluid>
-                  CURRÍCULO COMPLETO
-                </Button>
-              </a>
-            </Grid.Column>
-            <Grid.Column>
-              <h2>
-                <Icon
-                  name="address card outline"
-                  circular
-                  inverted
-                  size="small"
-                />
-                Formação
-              </h2>
-              <List bulleted>{backgroud}</List>
-              <h1> </h1>
-              <h2>
-                <Icon
-                  name="comment alternate outline"
-                  circular
-                  inverted
-                  size="small"
-                />
-                Idiomas
-              </h2>
-              <List bulleted>{languages}</List>
-              <h1> </h1>
-              <h2>
-                <Icon name="heart" circular inverted size="small" />
-                Interesses
-              </h2>
-              <List bulleted>{interests}</List>
-              <h1> </h1>
-              <h2>
-                <Icon name="coffee" circular inverted size="small" />
-                Atividades desenvolvidas
-              </h2>
-              <List bulleted>{works}</List>
-            </Grid.Column>
-          </Grid>
-        </Container>
-      </Segment>
+      <div id="details">
+        <Segment padded size="big">
+          <Container>
+            <Grid
+              columns={2}
+              relaxed="very"
+              textAlign="left"
+              verticalAlign="middle"
+              doubling
+              stackable
+            >
+              <Grid.Column textAlign="left">
+                <h1> </h1>
+                <Image src={Avatar} size="small" circular bordered centered />
+                <h1> </h1>
+                <h2>
+                  <Icon name="user" circular inverted size="small" />
+                  {name}
+                </h2>
+                {bio}
+                <h1> </h1>
+                <h2>
+                  <Icon name="briefcase" circular inverted size="small" />
+                  Contato com a profissão
+                </h2>
+                {profession}
+                <h1> </h1>
+                <a
+                  href={Curriculum}
+                  style={{
+                    textDecoration: "none"
+                  }}
+                >
+                  <Button basic color="black" fluid>
+                    CURRÍCULO COMPLETO
+                  </Button>
+                </a>
+              </Grid.Column>
+              <Grid.Column>
+                <h2>
+                  <Icon
+                    name="address card outline"
+                    circular
+                    inverted
+                    size="small"
+                  />
+                  Formação
+                </h2>
+                <List bulleted>{backgroud}</List>
+                <h1> </h1>
+                <h2>
+                  <Icon
+                    name="comment alternate outline"
+                    circular
+                    inverted
+                    size="small"
+                  />
+                  Idiomas
+                </h2>
+                <List bulleted>{languages}</List>
+                <h1> </h1>
+                <h2>
+                  <Icon name="heart" circular inverted size="small" />
+                  Interesses
+                </h2>
+                <List bulleted>{interests}</List>
+                <h1> </h1>
+                <h2>
+                  <Icon name="coffee" circular inverted size="small" />
+                  Atividades desenvolvidas
+                </h2>
+                <List bulleted>{works}</List>
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </Segment>
+      </div>
     );
   }
 }
-
-const gridStyle = {
-  height: "80vh"
-};

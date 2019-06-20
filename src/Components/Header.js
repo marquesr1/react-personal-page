@@ -18,6 +18,7 @@ export default class Header extends Component {
             <Nav className="mr-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#details">Detalhes</Nav.Link>
+              <Nav.Link href="#skills">Skills</Nav.Link>
               <Nav.Link href="#works">Portfólio</Nav.Link>
               <Nav.Link href="#blog">Blog</Nav.Link>
               <Nav.Link href="#contact">Contato</Nav.Link>

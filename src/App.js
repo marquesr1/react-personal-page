@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Details from "./Components/Details";
+import Skills from "./Components/Skills";
 import Works from "./Components/Works";
 import Blog from "./Components/Blog";
 import Contact from "./Components/Contact";
@@ -32,15 +33,33 @@ export default class App extends Component {
       languages: ["Português – Nativo", "Inglês – Intermediário"],
       interests: ["Desenvolvimento Web", "Inteligência Artificial"],
       works: ["Desenvolvimento de Sistemas Web", "Projetos em AutoCad"]
-    }
+    },
+    skills: [
+      "C",
+      "C#",
+      "Java",
+      "JavaScript",
+      "JQuery",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "React",
+      "Semantic UI React",
+      "NodeJs",
+      "SQL",
+      "Git",
+      "Windows",
+      "Linux"
+    ]
   };
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header name={this.state.about.name} />
         <About data={this.state.about} />
         <Details data={this.state.details} />
+        <Skills data={this.state.skills} />
         <Works />
         <Blog />
         <Contact />
