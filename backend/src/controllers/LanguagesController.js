@@ -1,37 +1,33 @@
 const mongoose = require("mongoose");
-const Languages = require("../models/Languages");
+const Language = require("../models/Language");
 
-class LanguagesController {
+class LanguageController {
   async index(req, res) {
-    const languages = await Languages.find();
+    const languages = await Language.find();
     return res.json(languages);
   }
 
   async show(req, res) {
-    const languages = await Languages.findById(req.params.id);
-    return res.json(languages);
+    const language = await Language.findById(req.params.id);
+    return res.json(language);
   }
 
   async store(req, res) {
-    const languages = await Languages.create(req.body);
-    return res.json(languages);
+    const language = await Language.create(req.body);
+    return res.json(language);
   }
 
   async update(req, res) {
-    const languages = await Languages.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true
-      }
-    );
-    return res.json(languages);
+    const language = await Language.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    });
+    return res.json(language);
   }
 
   async destroy(req, res) {
-    await Languages.findByIdAndRemove(req.params.id);
+    await Language.findByIdAndRemove(req.params.id);
     return res.send();
   }
 }
 
-module.exports = new LanguagesController();
+module.exports = new LanguageController();

@@ -16,8 +16,6 @@ mongoose
   .then(() => console.log("MongoDB connected..."))
   .catch(err => console.log(err));
 
-require("./models/User");
-
 app.use("/api", require("./routes"));
 
 app.listen(9999);

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Interests = require("../models/Interests");
+const Interests = require("../models/Interest");
 
 class InterestsController {
   async index(req, res) {
@@ -8,24 +8,24 @@ class InterestsController {
   }
 
   async show(req, res) {
-    const interests = await Interests.findById(req.params.id);
-    return res.json(interests);
+    const interest = await Interests.findById(req.params.id);
+    return res.json(interest);
   }
 
   async store(req, res) {
-    const interests = await Interests.create(req.body);
-    return res.json(interests);
+    const interest = await Interests.create(req.body);
+    return res.json(interest);
   }
 
   async update(req, res) {
-    const interests = await Interests.findByIdAndUpdate(
+    const interest = await Interests.findByIdAndUpdate(
       req.params.id,
       req.body,
       {
         new: true
       }
     );
-    return res.json(interests);
+    return res.json(interest);
   }
 
   async destroy(req, res) {

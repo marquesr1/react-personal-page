@@ -38,13 +38,13 @@ routes.put("/background/:id", BackgroundController.update);
 routes.delete("/background/:id", BackgroundController.destroy);
 
 //Portfolio
-const PortfolioController = require("./controllers/PortfolioController");
+const WorksController = require("./controllers/WorksController");
 
-routes.get("/portfolio", PortfolioController.index);
-routes.get("/portfolio/:id", PortfolioController.show);
-routes.post("/portfolio", PortfolioController.store);
-routes.put("/portfolio/:id", PortfolioController.update);
-routes.delete("/portfolio/:id", PortfolioController.destroy);
+routes.get("/portfolio", WorksController.index);
+routes.get("/portfolio/:id", WorksController.show);
+routes.post("/portfolio", WorksController.store);
+routes.put("/portfolio/:id", WorksController.update);
+routes.delete("/portfolio/:id", WorksController.destroy);
 
 //Infos
 const InfosController = require("./controllers/InfosController");
