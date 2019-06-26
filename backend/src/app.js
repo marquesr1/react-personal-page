@@ -19,3 +19,5 @@ mongoose
 app.use("/api", require("./routes"));
 
 app.listen(9999);
+
+console.log("Server running at http://localhost:9999");

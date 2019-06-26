@@ -37,6 +37,15 @@ routes.post("/background", BackgroundController.store);
 routes.put("/background/:id", BackgroundController.update);
 routes.delete("/background/:id", BackgroundController.destroy);
 
+//Activities
+const ActivitiesController = require("./controllers/ActivitiesController");
+
+routes.get("/activities", ActivitiesController.index);
+routes.get("/activities/:id", ActivitiesController.show);
+routes.post("/activities", ActivitiesController.store);
+routes.put("/activities/:id", ActivitiesController.update);
+routes.delete("/activities/:id", ActivitiesController.destroy);
+
 //Portfolio
 const WorksController = require("./controllers/WorksController");
 
