@@ -8,8 +8,8 @@ import {
   Segment,
   Button
 } from "semantic-ui-react";
-import Avatar from "../Components/Assets/Images/avatar.png";
-import Curriculum from "../Components/Assets/Files/Curriculum.pdf";
+import Avatar from "../Components/Assets/avatar.jpg";
+import Curriculum from "../Components/Assets/curriculum.pdf";
 
 export default class Details extends Component {
   render() {
