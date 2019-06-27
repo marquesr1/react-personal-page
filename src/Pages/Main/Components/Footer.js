@@ -3,12 +3,8 @@ import { Segment } from "semantic-ui-react";
 
 export default class Footer extends Component {
   render() {
-    let name = "[nome]";
-    let email = "[email]";
-    if (this.props.data) {
-      name = this.props.data.name;
-      email = this.props.data.email;
-    }
+    let name = this.props.name;
+    let email = this.props.email;
     const year = new Date();
     return (
       <div>

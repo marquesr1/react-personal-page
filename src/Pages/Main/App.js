@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Api from "../../Services/Api";
 
 import Header from "./Components/Header";
 import About from "./Components/About";
@@ -11,59 +12,24 @@ import Footer from "./Components/Footer";
 
 export default class App extends Component {
   state = {
-    about: {
-      name: "Rafael Marques",
-      occupation: "estudante de Engenharia de Software",
-      birthPlace: "Cornélio Procópio - PR",
-      city: "Cornélio",
-      github: "https://github.com/marquesr1/",
-      linkedin: "https://www.linkedin.com/in/rafael-marques-375b80181/"
-    },
+    name: "",
+    minibio: "",
     details: {
-      name: "Rafael Fernandes Marques",
-      bio:
-        "Em 2013 iniciei o ensino médio na UTFPR, e em 2016 me formei como técnico em mecânica. Em 2017 ingressei no curso de engenharia de software, também na UTFPR, e espero me formar em 2020.",
-      profession:
-        "O desenvolvimento de software é um campo dinâmico, e as necessidades de trabalho estão mudando constantemente. Por isso, gosto de ficar de olho nas tendências e tecnologias futuras, especialmente na área de IA e aprendizado de máquina.",
-      backgroud: [
-        "UTFPR/6º período - Bacharelado em Engenharia de Software",
-        "UTFPR/2016 - Técnico em Produção Mecânica, com nível médio integrado"
-      ],
-      languages: ["Português – Nativo", "Inglês – Intermediário"],
-      interests: ["Desenvolvimento Web", "Inteligência Artificial"],
-      works: ["Desenvolvimento de Sistemas Web", "Projetos em AutoCad"]
+      bio: "",
+      info: "",
+      background: [],
+      languages: [],
+      interests: [],
+      activities: []
     },
-    skills: [
-      "C",
-      "C#",
-      "Java",
-      "JavaScript",
-      "JQuery",
-      "HTML5",
-      "CSS3",
-      "Bootstrap",
-      "React",
-      "Semantic UI React",
-      "NodeJs",
-      "SQL",
-      "Git",
-      "Windows",
-      "Linux"
-    ],
-    works: [
-      {
-        header: "Página Pessoal",
-        description:
-          "Página pessoal desenvolvida utilizando React para apresentação na disciplina Programação Web 1",
-        link: "https://github.com/marquesr1/react-personal-page"
-      },
-      {
-        header: "Desafio 4Devs",
-        description:
-          "Implementação do Desafio 4Devs da ForLogic utilizando React ",
-        link: "https://github.com/marquesr1/desafio-4-devs"
-      }
-    ],
+    works: [],
+    links: {
+      github: "",
+      linkedin: "",
+      facebook: "",
+      email: ""
+    },
+    skills: [],
     blog: [
       {
         image:
@@ -92,33 +58,113 @@ export default class App extends Component {
         ref:
           "https://exame.abril.com.br/tecnologia/netflix-de-jogos-google-stadia-chega-em-novembro-com-preco-alto/"
       }
-    ],
-    contact: {
-      facebook:
-        "https://www.facebook.com/people/Rafael-Fernandes/100002207072236",
-      linkedin: "https://www.linkedin.com/in/rafael-marques-375b80181/"
-    },
-    footer: {
-      name: "Rafael Fernandes Marques",
-      email: "rafael.fmarques@outlook.com"
-    }
+    ]
   };
 
   componentDidMount() {
-    document.title = this.state.about.name;
+    this.loadName();
+    this.loadAbout();
+    this.loadDetails();
+    this.loadSkills();
+    this.loadLinks();
+    this.loadPortfolio();
   }
+
+  // About
+  loadName = async () => {
+    const response = await Api.get("/names/5d14d0e0cd2b7606bcf10bbe");
+    this.setState({ name: response.data.data });
+    document.title = this.state.name;
+  };
+
+  // About
+  loadAbout = async () => {
+    const response = await Api.get("/minibio/5d14a9e0968cd727a0fea104");
+    this.setState({ minibio: response.data.data });
+  };
+
+  // Details
+  loadDetails = async () => {
+    const bioResponse = await Api.get("/bio/5d14ad9ed1100c083033942b");
+    const bio = bioResponse.data.data;
+
+    const infoResponse = await Api.get("/infos/5d14ae67d1100c083033942c");
+    const info = infoResponse.data.data;
+
+    const backgroundResponse = await Api.get("/background");
+    const background = backgroundResponse.data.map(item => {
+      return item.data;
+    });
+
+    const languagesResponse = await Api.get("/languages");
+    const languages = languagesResponse.data.map(item => {
+      return item.data;
+    });
+
+    const interestsResponse = await Api.get("/interests");
+    const interests = interestsResponse.data.map(item => {
+      return item.data;
+    });
+
+    const activitiesResponse = await Api.get("/activities");
+    const activities = activitiesResponse.data.map(item => {
+      return item.data;
+    });
+
+    this.setState({
+      details: {
+        bio: bio,
+        info: info,
+        background: background,
+        languages: languages,
+        interests: interests,
+        activities: activities
+      }
+    });
+  };
+
+  // Skills
+  loadSkills = async () => {
+    const response = await Api.get("/skills");
+    const skills = response.data.map(item => {
+      return item.data;
+    });
+    this.setState({ skills: skills });
+  };
+
+  // Portfolio
+  loadPortfolio = async () => {
+    const response = await Api.get("/portfolio");
+    const works = response.data.map(item => {
+      return item;
+    });
+    this.setState({ works: works });
+  };
+
+  // Links
+  loadLinks = async () => {
+    const response = await Api.get("/links/5d14c9f8e8d08d254cdf0c30");
+    this.setState({
+      links: {
+        github: response.data.github,
+        linkedin: response.data.linkedin,
+        facebook: response.data.facebook,
+        email: response.data.email
+      }
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <Header name={this.state.about.name} />
-        <About data={this.state.about} />
-        <Details data={this.state.details} />
+        <Header name={this.state.name} />
+        <About data={this.state.minibio} links={this.state.links} />
+        <Details data={this.state.details} name={this.state.name} />
         <Skills data={this.state.skills} />
         <Works data={this.state.works} />
         <Blog data={this.state.blog} />
-        <Contact data={this.state.contact} />
-        <Footer data={this.state.footer} />
+        <Contact data={this.state.links} />
+        <Footer name={this.state.name} email={this.state.links.email} />
       </div>
     );
   }

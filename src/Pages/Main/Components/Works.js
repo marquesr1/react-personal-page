@@ -7,7 +7,7 @@ export default class Works extends Component {
       return (
         <Card
           key={index}
-          header={item.header}
+          header={item.title}
           description={item.description}
           extra={
             <a href={item.link} style={{ textDecoration: "none" }}>

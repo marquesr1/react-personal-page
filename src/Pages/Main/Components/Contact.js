@@ -3,12 +3,8 @@ import { Segment, Button, Form, Container, Icon } from "semantic-ui-react";
 
 export default class Contact extends Component {
   render() {
-    let facebook = "https://facebook.com/";
-    let linkedin = "https://linkedin.com/";
-    if (this.props.data) {
-      facebook = this.props.data.facebook;
-      linkedin = this.props.data.linkedin;
-    }
+    let facebook = this.props.data.facebook;
+    let linkedin = this.props.data.linkedin;
     return (
       <div id="contact">
         <Segment basic padded="very" textAlign="center" size="massive">
@@ -35,7 +31,6 @@ export default class Contact extends Component {
               </Button>
             </Container>
           </Form>
-          <h4>Redes sociais</h4>
           <a
             href={facebook}
             style={{

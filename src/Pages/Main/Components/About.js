@@ -4,20 +4,8 @@ import Background from "../Components/Assets/Images/header-background.jpg";
 
 export default class About extends Component {
   render() {
-    let name = "[nome]";
-    let occupation = "[ocupacao]";
-    let birthPlace = "[local de nascimento]";
-    let city = "[local atual]";
-    let github = "https://github.com/";
-    let linkedin = "https://linkedin.com/";
-    if (this.props.data) {
-      name = this.props.data.name;
-      occupation = this.props.data.occupation;
-      birthPlace = this.props.data.birthPlace;
-      city = this.props.data.city;
-      github = this.props.data.github;
-      linkedin = this.props.data.linkedin;
-    }
+    const minibio = this.props.data;
+    const links = this.props.links;
 
     return (
       <Grid
@@ -29,12 +17,11 @@ export default class About extends Component {
         <Grid.Column style={{ maxWidth: 600 }}>
           <Container>
             <h2 style={{ color: "LightGrey", paddingBottom: "3rem" }}>
-              Olá! sou <b>{name}</b>, <b>{occupation}</b>. Sou de {birthPlace},
-              e atualmente moro em {city}.
+              {minibio}
             </h2>
 
             <a
-              href={github}
+              href={links.github}
               style={{
                 textDecoration: "none"
               }}
@@ -42,7 +29,7 @@ export default class About extends Component {
               <Icon name="github" size="huge" inverted link />
             </a>
             <a
-              href={linkedin}
+              href={links.linkedin}
               style={{
                 textDecoration: "none"
               }}

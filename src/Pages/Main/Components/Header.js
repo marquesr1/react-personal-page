@@ -3,12 +3,7 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 
 export default class Header extends Component {
   render() {
-    let name;
-    if (this.props.name) {
-      name = this.props.name;
-    } else {
-      name = "Seu nome";
-    }
+    let name = this.props.name;
     return (
       <Navbar sticky="top" bg="light" expand="lg">
         <Container>

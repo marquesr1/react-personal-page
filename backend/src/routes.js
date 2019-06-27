@@ -1,6 +1,15 @@
 const express = require("express");
 const routes = express.Router();
 
+//Name
+const NameController = require("./controllers/NameController");
+
+routes.get("/names", NameController.index);
+routes.get("/names/:id", NameController.show);
+routes.post("/names", NameController.store);
+routes.put("/names/:id", NameController.update);
+routes.delete("/names/:id", NameController.destroy);
+
 //Mini biography
 const MiniBioController = require("./controllers/MiniBioController");
 
@@ -45,6 +54,15 @@ routes.get("/activities/:id", ActivitiesController.show);
 routes.post("/activities", ActivitiesController.store);
 routes.put("/activities/:id", ActivitiesController.update);
 routes.delete("/activities/:id", ActivitiesController.destroy);
+
+//Skills
+const SkillsController = require("./controllers/SkillsController");
+
+routes.get("/skills", SkillsController.index);
+routes.get("/skills/:id", SkillsController.show);
+routes.post("/skills", SkillsController.store);
+routes.put("/skills/:id", SkillsController.update);
+routes.delete("/skills/:id", SkillsController.destroy);
 
 //Portfolio
 const WorksController = require("./controllers/WorksController");
